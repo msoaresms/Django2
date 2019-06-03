@@ -16,17 +16,12 @@
 </head>
 
 <body>
-    <h2>Listagem</h2>
-    <ul>
-        {% for transacao in transacoes %}
-        <li><a href="{% url 'update' transacao.id %}">
-                {{ transacao.descricao }} - {{ transacao.data }} - {{ transacao.valor }} - {{ transacao.categoria }}
-            </a>
-        </li>
-        {% endfor %}
-    </ul>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
 
-    <a href="{% url 'nova' %}">Novo</a>
+        <button type="submit">Salvar</button>
+    </form>
 
     <script src="" async defer></script>
 </body>
