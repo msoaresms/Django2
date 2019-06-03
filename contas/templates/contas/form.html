@@ -21,6 +21,9 @@
         {{ form.as_p }}
 
         <button type="submit">Salvar</button>
+        {% if transacao %}
+        <a href="{% url 'delete' transacao.id  %}">Remover</a>
+        {% endif}
     </form>
 
     <script src="" async defer></script>
